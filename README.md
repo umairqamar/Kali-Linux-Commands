@@ -2,15 +2,15 @@
 
 ## Enabling Monitor Mode
 
-`iwconfig` : Show all network devices
-`ifconfig wlan1 up` : To make sure network device is up and running
-`airmon-ng` : Show all network cards
-`airmon-ng check kill` : To prevent from disabling monitor mode
-`airmon-ng start wlan1` : Start monitor mode
+Show all network devices `iwconfig` 
+To make sure network device is up and running `ifconfig wlan1 up` 
+Show all network cards `airmon-ng`
+To prevent from disabling monitor mode `airmon-ng check kill`
+Start monitor mode `airmon-ng start wlan1`
 
 ## Reset to normal mode
 
-`airmon-ng stop wlan1mon` : Stop monitor moder
+`airmon-ng stop wlan1mon` : Stop monitor mode
 `service network-manager start` : Restart network settings
 
 ## Sniffing Packets using airodump-ng
