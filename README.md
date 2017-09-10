@@ -1,4 +1,4 @@
-# Kali-Linux-Commands
+# Kali-Linux-Reference
 
 ## Enabling Monitor Mode
 
@@ -46,6 +46,55 @@
 * `pyrit -r capture.cap -o output.cap strip`
 
 
+# Rouge Access Point
+
+## Enabling Monitor Mode
+
+* `airmon-ng check kill` : To prevent from disabling monitor mode 
+* `airmon-ng start wlan1` : Start monitor mode 
+* `ifconfig wlan1mon 10.0.0.1/24` : Set IP of Monitor Interface
+
+## Install tools
+
+* `apt-get install -y hostapd dnsmasq wireless-tools iw wvdial`
+
+## Configure dnsmasq
+
+* `mv /etc/dnsmasq.conf /etc/dnsmasq.conf_bkp` : Create backup of config file
+* `vim /etc/dnsmasq.conf`
+
+## dnsmasq.conf file
+```
+log-facility=/var/log/dnsmasq.log
+#address=/#/10.0.0.1
+#address=/google.com/10.0.0.1
+interface=wlan0mon
+dhcp-range=10.0.0.10,10.0.0.250,12h
+dhcp-option=3,10.0.0.1
+dhcp-option=6,10.0.0.1
+#no-resolv
+log-queries
+```
+
+* `vim /etc/hostapd/hostapd.conf`
+
+## dnsmasq.conf file
+```
+interface=wlan1mon
+driver=nl80211
+ssid=Rouge-AP
+channel=1
+#enable_karma=1
+```
+
+## Start dnsmasq 
+
+* `service dnsmasq start`
+* `tail -f /var/log/dnsmasq.log`
+
+## Start hostapd 
+
+* `hostapd /etc/hostapd/hostapd.conf`
 
 
 
