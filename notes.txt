@@ -1,0 +1,62 @@
+- To change user password
+passwd root
+
+- Adding a non-root user
+adduser noroot
+
+When creating a virtual machine, select a fixed disk size instead of one that is dynamically allocated. It is faster to add files to a fixed disk, and there is less
+file fragmentation
+
+The preload application (apt-get install preload) identifies a user's most commonly used programs and preloads binaries and dependencies into memory to provide faster access. It works automatically after the first restart following installation. 
+Install Boot Up Manager (BUM) to disable unnecessary services and applications that are enabled during the boot up (apt-get install bum),
+
+Add gnome-do (apt-get install gnome-do) to launch applications directly from the keyboard. To configure gnome-do, select it from the Applications | Accessories menu. Once launched, select the Preferences menu, activate the Quiet Launch function, and select a launch command (for example, Ctrl + Shift). Clear any existing commands, and then enter the command line to be executed when the launch keys are selected. Rather than launching directly from the keyboard, it is possible to write specific scripts that launch complex operations.
+
+- Run Applications as noroot
+apt-get install sux
+
+ps aux |grep iceweasel
+
+Enter the command line: ps aux |grep iceweasel. As you can see,Iceweasel is running with root privileges.
+Close Iceweasel, and relaunch using the command sux - noroot iceweasel
+
+DNS Eunmeration (fierce,dnsenum,dnsrecon)
+
+
+Disabling IPv6 can be accomplished by
+editing the /etc/sysctl.conf file to include the following lines:
+#disable ipv6
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable = 1
+
+
+SCTP is an increasingly common protocol on networks, but it is rarely tested on corporate networks.
+
+xprobe2 for OS detection
+
+Deepmagic Information Gathering Tool (DMitry).
+
+Marc Ruef's vulscan (http://www.computec.ch/mruef/
+software/nmap_nse_vulscan-1.0.tar.gz), which combines the fingerprinting
+feature of nmap (using the sV flag) with lookups against major vulnerabilities, such
+as MITRE, OSVDB, and SecurityFocus.
+
+files to usr/share/nmap/scripts.
+Active Reconnaissance and Vulnerability Scanning
+[ 82 ]
+To invoke one of the scripts from the command line, use the --script flag, and
+then identify the script name. One script that is frequently used is nmap's general
+vulnerability scanner, launched using the following command:
+root@kali:~# nmap -sV --script=vulscan.nse digitaldefence.ca
+
+
+A must-have script is the SpiderLabs script to screenshot web services.
+It requires the wkhtmltoimage tool to be downloaded (http://
+wkhtmltopdf.googlecode.com) and placed in the /usr/local/
+bin folder. The screenshot script itself should then be downloaded
+(https://github.com/SpiderLabs/Nmap-Tools/blob/
+master/NSE/http-screenshot.nse) and placed in /usr/local/
+share/nmap/scripts. When invoked, this script produces a visual
+record of all the identified web services, making it easier to select a
+target for testing later.
