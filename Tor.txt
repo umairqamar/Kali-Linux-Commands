@@ -1,0 +1,20 @@
+To install Tor, perform the following steps:
+1. Issue the apt-get update and apt-get upgrade commands, and then use the following command:
+apt-get install tor
+
+2. Once Tor is installed, edit the Proxychains.conf file located in the /etc directory.
+
+disable the use of strict_chains and enable dynamic_chains
+
+Next, edit the [ProxyList] section to ensure that the socks5 proxy is present
+
+service tor start
+service tor status
+
+iceweasel www.whatismyip.com 
+
+proxychainsiceweasel www.whatismyip.com
+
+check.torproject.org
+
+www.dnsleaktest.com
