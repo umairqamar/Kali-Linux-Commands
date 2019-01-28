@@ -125,9 +125,5 @@ channel=1
 
 `scp -i {{~/.ssh/private_key}} {{local_file}} {{remote_host}}:{{/path/remote_file}}`
 
-##Local Exploit Suggestor:
+## Local Exploit Suggestor:
 `post/multi/recon/local_exploit_suggestor
-
-
-
-
