@@ -130,3 +130,4 @@ channel=1
 
 ## Executeables with SUID bit set
 `find / -perm -u=s -type f 2>/dev/null `
+`find directory – user root – perm – 4000 – exec ls – ld   {} \ ; >/tmp/setuid`
