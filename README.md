@@ -127,3 +127,6 @@ channel=1
 
 ## Local Exploit Suggestor:
 `post/multi/recon/local_exploit_suggester`
+
+## Executeables with SUID bit set
+`find / -perm -u=s -type f 2>/dev/null `
