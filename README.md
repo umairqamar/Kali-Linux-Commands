@@ -134,3 +134,4 @@ channel=1
 
 ## Wfuzz
 * `wfuzz -c -w wordlist -u http://10.10.10.10/index.php?id=FUZZ`
+* `wfuzz -z file,wordlist/others/common_pass.txt -d "uname=FUZZ&pass=FUZZ"  --hc 302 http://testphp.vulnweb.com/userinfo.php`
